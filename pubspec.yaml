@@ -30,6 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  table_calendar: ^3.0.7  # Add this line for the calendar
+  firebase_core: ^3.6.0  # Substitua pela versão mais recente
+  firebase_auth: ^5.3.1  # Substitua pela versão mais recente
+  google_sign_in: ^6.2.1 # Substitua pela versão mais recente
 
 
   # The following adds the Cupertino Icons font to your application.
