@@ -44,20 +44,49 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Text('Login'),
         backgroundColor: Colors.teal,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(32.0),
+          decoration: BoxDecoration(
+            color: Colors.grey[400],
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10,
+                offset: Offset(0, 4),
+              ),
+            ],
+          ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              ElevatedButton.icon(
-                icon: Icon(Icons.login),
-                label: Text('Login with Google'),
-                onPressed: _signInWithGoogle,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  textStyle: TextStyle(fontSize: 18),
+              Text(
+                'Seja bem-vindo!',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              SizedBox(height: 20),
+              CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.grey[300],
+                child: Text(
+                  'Logo',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black54,
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+              GestureDetector(
+                onTap: _signInWithGoogle,
+                child: Image.asset(
+                  "C:\Users\Marcus Nóbrega\ritmoo\assets\images\web_light_rd_SI@1x.png",
+                  width: 200,
                 ),
               ),
             ],
