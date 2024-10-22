@@ -62,8 +62,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - C:\Users\Marcus Nóbrega\ritmoo\assets\images\web_light_rd_SI@1x.png
-    - C:\Users\Marcus Nóbrega\ritmoo\assets\images\web_light_rd_na@1x.png
+    - assets/images/web_light_rd_SI@1x.png
+    - assets/images/web_light_rd_na@1x.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

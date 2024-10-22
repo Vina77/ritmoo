@@ -14,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    /*  final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
         return; // O login foi cancelado
       }
@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
         idToken: googleAuth.idToken,
       );
 
-      await _auth.signInWithCredential(credential);
+      await _auth.signInWithCredential(credential);*/
       // Se o login for bem-sucedido, navegue para a próxima tela
       Navigator.pushReplacement(
         context,
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
               GestureDetector(
                 onTap: _signInWithGoogle,
                 child: Image.asset(
-                  "C:\Users\Marcus Nóbrega\ritmoo\assets\images\web_light_rd_SI@1x.png",
+                  "assets/images/web_light_rd_SI@1x.png",
                   width: 200,
                 ),
               ),
