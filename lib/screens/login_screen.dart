@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'habit_list_screen.dart';
+import 'home_page.dart'; // Importando a HomePage
+// import 'habit_list_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -14,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _signInWithGoogle() async {
     try {
-    /*  final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      /* final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
         return; // O login foi cancelado
       }
@@ -27,10 +29,12 @@ class _LoginScreenState extends State<LoginScreen> {
       );
 
       await _auth.signInWithCredential(credential);*/
-      // Se o login for bem-sucedido, navegue para a próxima tela
+
+      // Se o login for bem-sucedido, navegue para a HomePage
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HabitListScreen()),
+        MaterialPageRoute(
+            builder: (context) => HomePage()), // Redireciona para HomePage
       );
     } catch (e) {
       print('Erro ao fazer login com o Google: $e');
@@ -70,14 +74,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 20),
-              CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.grey[300],
-                child: Text(
-                  'Logo',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black54,
+              Container(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 34, 42, 45), // Cor 292929 em ARGB
+                  shape: BoxShape.circle,
+                ),
+                padding: EdgeInsets.all(5), // Aumentei o padding para 12
+                child: CircleAvatar(
+                  backgroundColor: Colors
+                      .transparent, // Para que o fundo preto apareça atrás
+                  radius: 55, // Aumentei o radius para 55
+                  child: SvgPicture.asset(
+                    "assets/images/logo_ritmoo.svg",
+                    width: 57,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
